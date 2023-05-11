@@ -1,39 +1,22 @@
-//  This example requires Tailwind CSS v2.0+ 
-//
-  
-    This example requires updating your template:
-  
-    ```
-    <html class="h-full">
-    <body class="h-full">
-    ```
 html
   include common/app-head.pug
-  +head("Welcome to ExpressJS Example")  
+  +head("Welcome to ExpressJS API Example")  
   body
     .min-h-full
       include common/app-navbar.pug
       +app-navbar()
       div
         header
-          //-.max-w-7xl.mx-auto.px-4.sm_px-6.lg_px-8
-            h1.text-3xl.font-bold.leading-tight.text-gray-900 Welcome, User
         main
           //- JWT that identifies this user:
           div(hidden, id="token", data-token=token)
-          //-.max-w-7xl.mx-auto.px-2.sm_px-6.md_px-8.mt-8
-            .bg-white.px-2.py-1.sm_px-6.lg_px-8.border.rounded-md.border-indigo-300
-              include common/tab-pills.pug
-              +tab_pills()
           .max-w-full.mx-auto
             //  Replace with your content 
-          .max-w-7xl.mx-auto.px-4.sm_px-6.md_px-8
-            div.mt-6.grid.grid-cols-1.gap-y-6.gap-x-4.sm_grid-cols-6.relative
-              div(id="status").col-span-6
     include ./common/app-footer.pug
     +footer()
     script(src=asset('javascripts/fetchUserData.js'))
     script.
+      // Fetch the current user or create it if it doesn't exist.
       $(document).ready (async function(){
         await createGetUser();
       });
