@@ -1,8 +1,7 @@
 
 const createGetUser = async function() {
   let jwt = $("#token").attr("data-token");
-  let server_url = "https://expressjs-api-server.onrender.com";
-
+  let server_url = "https://expressjs-api-backend.onrender.com";
   return new Promise((resolve, reject) => {
     $.ajax({
         url: server_url + "/create-get-user",
