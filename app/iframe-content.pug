@@ -9,10 +9,9 @@ html(lang='en')
 		.bg-white.p-4.rounded-md.shadow-md
 			label.block.text-sm.font-medium.text-gray-700(for='textInput') Your Text:
 			textarea#textInput.mt-1.p-2.w-full.h-16.border.rounded-md
-			button#generateBtn.mt-2.px-4.py-2.bg-blue-500.text-white.rounded-md.hover_bg-blue-600 Generate
+			button#generateBtn(onclick=`submitPrompt()`).mt-2.px-4.py-2.bg-blue-500.text-white.rounded-md.hover_bg-blue-600 Generate
+		script(src=asset('javascripts/fetchUserData.js'))
 		script.
-				document.getElementById('generateBtn').addEventListener('click', function() {
-				const textInput = document.getElementById('textInput').value;
-					// Add your API call logic here using the textInput value
-				});
-			
+			$(document).ready (async function(){
+				// Do nothing on iframe load.
+			});
