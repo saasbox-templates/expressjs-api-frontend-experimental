@@ -14,34 +14,32 @@ html(lang='en')
 		
 		script(src=asset('javascripts/fetchUserData.js'))
 		script.
-			$(document).ready (async function(){
-				document.getElementById('generateBtn').addEventListener('click', function() {
-				    const textInput = document.getElementById('textInput').value;
-				    
-				    // Define a function that returns a promise which resolves with the API response
-				    async function postData(url = '', data = {}) {
-				        const response = await fetch(url, {
-				            method: 'POST',
-				            headers: {
-				                'Content-Type': 'application/json'
-				            },
-				            body: JSON.stringify(data)
-				        });
-				        
-				        if (!response.ok) {
-				            throw new Error(`HTTP error! Status: ${response.status}`);
-				        }
-				        
-				        return response.json(); // Parse and return the JSON response body
-				    }
-				    
-				    // Use the function
-				    postData('http://localhost:5000/process_repo', { user_prompt: textInput })
-				        .then(data => {
-				            console.log(data); // Handle data from the API here
-				        })
-				        .catch((error) => {
-				            console.error('Error:', error); // Handle errors here
-				        });
-				});
+			document.getElementById('generateBtn').addEventListener('click', function() {
+			    const textInput = document.getElementById('textInput').value;
+			    
+			    // Define a function that returns a promise which resolves with the API response
+			    async function postData(url = '', data = {}) {
+			        const response = await fetch(url, {
+			            method: 'POST',
+			            headers: {
+			                'Content-Type': 'application/json'
+			            },
+			            body: JSON.stringify(data)
+			        });
+			        
+			        if (!response.ok) {
+			            throw new Error(`HTTP error! Status: ${response.status}`);
+			        }
+			        
+			        return response.json(); // Parse and return the JSON response body
+			    }
+			    
+			    // Use the function
+			    postData('http://localhost:5000/process_repo', { user_prompt: textInput })
+			        .then(data => {
+			            console.log(data); // Handle data from the API here
+			        })
+			        .catch((error) => {
+			            console.error('Error:', error); // Handle errors here
+			        });
 			});
