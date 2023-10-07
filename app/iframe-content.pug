@@ -35,7 +35,7 @@ html(lang='en')
 			    }
 			    
 			    // Use the function
-			    postData('http://localhost:5000/process_repo', { user_prompt: textInput })
+			    postData('http://127.0.0.1:5000/process_repo', { user_prompt: textInput })
 			        .then(data => {
 			            console.log(data); // Handle data from the API here
 			        })
