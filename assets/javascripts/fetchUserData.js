@@ -10,7 +10,7 @@ const submitPrompt = async function() {
   let server_url = "http://localhost:5000";
   return new Promise((resolve, reject) => {
     $.ajax({
-        url: server_url + "/create-get-user",
+        url: server_url + "/process_repo",
         headers: { Authorization: "Bearer " + jwt },
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
